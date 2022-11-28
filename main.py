@@ -3,27 +3,29 @@ from kivy.uix.widget import Widget
 from kivy.properties import (
     NumericProperty, ReferenceListProperty, ObjectProperty
 )
-from kivy.vector import Vector
 from kivy.clock import Clock
+from kivy.graphics import Color, Ellipse
+from kivy.core.window import Window
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.button import Button
 
-class Ex(Widget):
-    score = NumericProperty(0)
-
-class Oh(Widget):
-    score = NumericProperty(0)
-
-class TicTacToeGame(Widget):
-    Ex = ObjectProperty(None)
-    Oh = ObjectProperty(None)
-
-    def on_touch_move(self, touch):
-        if touch.x < self.width / 3 and touch.y < self.height / 3:
-            self.Ex.center_y = touch.y
+class Grid(GridLayout):
+    def __init__(self,**kwargs):
+        super(Grid,self).__init__(**kwargs)
+        self.cols = 3
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
+        self.add_widget(Button(text=''))
 
 class TicTacToeApp(App):
     def build(self):
-        game = TicTacToeGame()
-        return game
+        return Grid()
 
 if __name__ == '__main__':
     TicTacToeApp().run()

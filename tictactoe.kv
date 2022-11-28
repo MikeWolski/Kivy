@@ -14,42 +14,19 @@
             pos: self.pos
             size: self.size
 
+<Area>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 <TicTacToeGame>:
     player1: player_ex
     player2: player_oh
     
-    canvas:
-        Rectangle:
-            pos: self.width*1/3 - 5, 0
-            size: 10, self.height
-        Rectangle:
-            pos: self.width*2/3 - 5, 0
-            size: 10, self.height
-        Rectangle:
-            pos: 0, self.height*1/3 - 5
-            size: 10, self.width
-        Rectangle:
-            pos: 0, self.height*2/3 - 5
-            size: 10, self.width
-    
-    Label:
-        font_size: 70  
-        center_x: root.width / 4
-        top: root.top - 50
-        text: str(root.player1.score)
-        
-    Label:
-        font_size: 70  
-        center_x: root.width * 3 / 4
-        top: root.top - 50
-        text: str(root.player2.score)
-        
-    Ex:
-        id: player_ex
-        x: root.x
-        center_y: root.center_y
-        
-    Oh:
-        id: player_oh
-        x: root.width - self.width
-        center_y: root.center_y
+    #Label:
+        #font_size: 70  
+        #center_x: root.width / 4
+        #top: root.top - 50
+        #text: str(root.player1.score)
+
